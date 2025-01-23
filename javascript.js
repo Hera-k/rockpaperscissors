@@ -63,20 +63,34 @@ function playGame(){
     const div = document.createElement("div");
     container.appendChild(div);
 
+    function checkIfGameOver(){
+        if(userScore > 5 || compScore > 5){
+        div.textContent = "Game Over";
+        btn1.disabled = true;
+        btn2.disabled = true;
+        btn3.disabled = true;
+    }
+}
     //adding event listeners to the buttons
-            btn1.addEventListener("click", () => {
-            playRound(getComputerChoice().toLowerCase(), "rock");
-            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+        btn1.addEventListener("click", () => {
+        computerChoice = getComputerChoice().toLowerCase();
+        playRound(computerChoice, "rock");
+        div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+        checkIfGameOver();
         }
         );
         btn2.addEventListener("click", () => {
-            playRound(getComputerChoice().toLowerCase(), "paper");
-            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+            computerChoice = getComputerChoice().toLowerCase();
+            playRound(computerChoice, "paper");
+            div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+            checkIfGameOver();
         });
 
         btn3.addEventListener("click", () => {
-            playRound(getComputerChoice().toLowerCase(), "scissors");
-            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+            computerChoice = getComputerChoice().toLowerCase();
+            playRound(computerChoice, "scissors");
+            div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+            checkIfGameOver();
         });
         
 

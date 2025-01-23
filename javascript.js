@@ -66,6 +66,15 @@ function playGame(){
     function checkIfGameOver(){
         if(userScore > 5 || compScore > 5){
         div.textContent = "Game Over";
+        const div2 = document.createElement("div");
+        div2.classList.add("div2");
+        if (userScore > compScore){
+            div2.textContent = "YOU WON!!!!";
+        } else{
+            div2.textContent = "YOU LOST!!!!";
+        }
+        container.appendChild(div2);
+        
         btn1.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;

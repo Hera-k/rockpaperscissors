@@ -34,18 +34,45 @@ function playRound(compChoice, userChoice){
 
 //function to play the game, 5 rounds each
 function playGame(){
-    //get the Computer and user choice
-    let compChoice = getComputerChoice().toLowerCase();
-    let userChoice = getHumanChoice().toLowerCase();
-    for(let i = 0; i < 5; i++){
-        compChoice = getComputerChoice().toLowerCase();
-        userChoice = getHumanChoice().toLowerCase();
+    /*for(let i = 0; i < 5; i++){
+        let compChoice = getComputerChoice().toLowerCase();
+        let userChoice = getHumanChoice().toLowerCase();
         playRound(compChoice, userChoice);
         console.log("The user chose " + userChoice);
         console.log("The computer chose " + compChoice);    
-    }
+    }*/
 }
 
 playGame();
-console.log(userScore);
-console.log(compScore);
+const container = document.querySelector("#container");
+const btn1 = document.createElement("button");
+btn1.classList.add("btn1");
+btn1.textContent = "Rock";
+const btn2 = document.createElement("button");
+btn2.classList.add("btn2");
+btn2.textContent = "Paper";
+const btn3 = document.createElement("button");
+btn3.classList.add("btn3");
+btn3.textContent = "Scissors";
+container.appendChild(btn1);
+container.appendChild(btn2);
+container.appendChild(btn3);
+
+
+btn1.addEventListener("click", () => {
+    playRound(getComputerChoice(), "Rock");
+    alert("Rock");
+}
+);
+btn2.addEventListener("click", () => {
+    playRound(getComputerChoice(), "Paper");
+    alert("Paper")
+});
+
+btn3.addEventListener("click", () => {
+    playRound(getComputerChoice(), "Scissors");
+    alert("Scissors");
+
+});
+
+ 

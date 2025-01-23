@@ -34,6 +34,42 @@ function playRound(compChoice, userChoice){
 
 //function to play the game, 5 rounds each
 function playGame(){
+    const container = document.querySelector("#container");
+    const btn1 = document.createElement("button");
+    btn1.classList.add("btn1");
+    btn1.textContent = "Rock";
+    const btn2 = document.createElement("button");
+    btn2.classList.add("btn2");
+    btn2.textContent = "Paper";
+    const btn3 = document.createElement("button");
+    btn3.classList.add("btn3");
+    btn3.textContent = "Scissors";
+    container.appendChild(btn1);
+    container.appendChild(btn2);
+    container.appendChild(btn3);
+
+    //displaying results
+    const div = document.createElement("div");
+    container.appendChild(div);
+
+    //adding event listeners to the buttons
+        btn1.addEventListener("click", () => {
+            playRound(getComputerChoice().toLowerCase(), "rock");
+            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+        }
+        );
+        btn2.addEventListener("click", () => {
+            playRound(getComputerChoice().toLowerCase(), "paper");
+            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+        });
+
+        btn3.addEventListener("click", () => {
+            playRound(getComputerChoice().toLowerCase(), "scissors");
+            div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+        });
+
+
+    
     /*for(let i = 0; i < 5; i++){
         let compChoice = getComputerChoice().toLowerCase();
         let userChoice = getHumanChoice().toLowerCase();
@@ -44,35 +80,5 @@ function playGame(){
 }
 
 playGame();
-const container = document.querySelector("#container");
-const btn1 = document.createElement("button");
-btn1.classList.add("btn1");
-btn1.textContent = "Rock";
-const btn2 = document.createElement("button");
-btn2.classList.add("btn2");
-btn2.textContent = "Paper";
-const btn3 = document.createElement("button");
-btn3.classList.add("btn3");
-btn3.textContent = "Scissors";
-container.appendChild(btn1);
-container.appendChild(btn2);
-container.appendChild(btn3);
 
 
-btn1.addEventListener("click", () => {
-    playRound(getComputerChoice(), "Rock");
-    alert("Rock");
-}
-);
-btn2.addEventListener("click", () => {
-    playRound(getComputerChoice(), "Paper");
-    alert("Paper")
-});
-
-btn3.addEventListener("click", () => {
-    playRound(getComputerChoice(), "Scissors");
-    alert("Scissors");
-
-});
-
- 

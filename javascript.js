@@ -44,16 +44,27 @@ function playGame(){
     const btn3 = document.createElement("button");
     btn3.classList.add("btn3");
     btn3.textContent = "Scissors";
+    const btn4 = document.createElement("button");
+    btn4.classList.add("btn4");
+    btn4.textContent = "Reset";
     container.appendChild(btn1);
     container.appendChild(btn2);
     container.appendChild(btn3);
+    container.appendChild(btn4);
+
+    btn4.addEventListener("click", () => {
+        userScore = 0;
+        compScore = 0;
+        div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+
+    })
 
     //displaying results
     const div = document.createElement("div");
     container.appendChild(div);
 
     //adding event listeners to the buttons
-        btn1.addEventListener("click", () => {
+            btn1.addEventListener("click", () => {
             playRound(getComputerChoice().toLowerCase(), "rock");
             div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
         }
@@ -67,6 +78,7 @@ function playGame(){
             playRound(getComputerChoice().toLowerCase(), "scissors");
             div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
         });
+        
 
 
     

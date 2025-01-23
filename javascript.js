@@ -51,35 +51,37 @@ function playGame(){
     container.appendChild(btn2);
     container.appendChild(btn3);
     container.appendChild(btn4);
-
-    btn4.addEventListener("click", () => {
-        userScore = 0;
-        compScore = 0;
-        div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
-
-    })
+    
 
     //displaying results
     const div = document.createElement("div");
     container.appendChild(div);
+    const div2 = document.createElement("div");
+    div2.classList.add("div2");
+    container.appendChild(div2);
 
     function checkIfGameOver(){
         if(userScore > 5 || compScore > 5){
         div.textContent = "Game Over";
-        const div2 = document.createElement("div");
-        div2.classList.add("div2");
         if (userScore > compScore){
             div2.textContent = "YOU WON!!!!";
         } else{
             div2.textContent = "YOU LOST!!!!";
         }
-        container.appendChild(div2);
         
         btn1.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;
     }
 }
+    //to reset the scores
+    btn4.addEventListener("click", () => {
+        userScore = 0;
+        compScore = 0;
+        div2.textContent = "";
+        div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+
+    })
     //adding event listeners to the buttons
         btn1.addEventListener("click", () => {
         computerChoice = getComputerChoice().toLowerCase();

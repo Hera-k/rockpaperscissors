@@ -82,6 +82,9 @@ function playGame(){
         userScore = 0;
         compScore = 0;
         div2.textContent = "";
+        btn1.disabled = false;
+        btn2.disabled = false;
+        btn3.disabled = false;
         div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
 
     })

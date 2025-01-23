@@ -32,7 +32,7 @@ function playRound(compChoice, userChoice){
     }
 }
 
-//function to play the game, 5 rounds each
+//function to play the game
 function playGame(){
     const container = document.querySelector("#container");
     const btn1 = document.createElement("button");
@@ -56,10 +56,13 @@ function playGame(){
     //displaying results
     const div = document.createElement("div");
     container.appendChild(div);
+
+    //div to show who won
     const div2 = document.createElement("div");
     div2.classList.add("div2");
     container.appendChild(div2);
 
+    //stop the game when one reaches 5
     function checkIfGameOver(){
         if(userScore > 5 || compScore > 5){
         div.textContent = "Game Over";
@@ -104,16 +107,6 @@ function playGame(){
             checkIfGameOver();
         });
         
-
-
-    
-    /*for(let i = 0; i < 5; i++){
-        let compChoice = getComputerChoice().toLowerCase();
-        let userChoice = getHumanChoice().toLowerCase();
-        playRound(compChoice, userChoice);
-        console.log("The user chose " + userChoice);
-        console.log("The computer chose " + compChoice);    
-    }*/
 }
 
 playGame();

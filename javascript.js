@@ -34,6 +34,7 @@ function playRound(compChoice, userChoice){
 
 //function to play the game
 function playGame(){
+    //selecting all the css elements
     const container = document.querySelector("#container");
     const btn1 = document.querySelector("#btn1");
     const btn2 = document.querySelector("#btn2");
@@ -44,6 +45,10 @@ function playGame(){
     //displaying results
     const yourScore = document.querySelector("#yourScore");
     const computerScore = document.querySelector("#computerScore");
+
+    //to display the computer choice
+    const computerChoiceButton = document.querySelector("#computerChoice");
+
 
     //div to show who won
     const div2 = document.querySelector("#Winner");
@@ -71,6 +76,7 @@ function playGame(){
         btn1.disabled = false;
         btn2.disabled = false;
         btn3.disabled = false;
+        div2.textContent = "...";
         yourScore.textContent = "Your score: " + userScore;
         computerScore.textContent = "Opponent score: " + compScore;
 
@@ -81,6 +87,7 @@ function playGame(){
         playRound(computerChoice, "rock");
         yourScore.textContent = "Your score: " + userScore;
         computerScore.textContent = "Opponent score: " + compScore;
+        computerChoiceButton.textContent = "Opponent : " + computerChoice;
         checkIfGameOver();
         }
         );
@@ -89,6 +96,8 @@ function playGame(){
             playRound(computerChoice, "paper");
             yourScore.textContent = "Your score: " + userScore;
             computerScore.textContent = "Opponent score: " + compScore;
+            computerChoiceButton.textContent = "Opponent : " + computerChoice;
+
             checkIfGameOver();
         });
 
@@ -97,11 +106,11 @@ function playGame(){
             playRound(computerChoice, "scissors");
             yourScore.textContent = "Your score: " + userScore;
             computerScore.textContent = "Opponent score: " + compScore;
+            computerChoiceButton.textContent = "Opponent : " + computerChoice;
             checkIfGameOver();
         });
         
 }
-
 playGame();
 
 

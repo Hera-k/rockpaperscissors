@@ -93,6 +93,7 @@ button:active{
     text-align: center;
     height: 70px;
     width: 250px;
+    border-radius: 10px;
 }
 
 #btn4{

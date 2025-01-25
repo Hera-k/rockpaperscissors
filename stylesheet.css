@@ -7,6 +7,19 @@
     align-self: center;
     font-size: 70px;
     font-family:'Courier New', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500px;
+}
+#Winner{
+    border: 2px solid #F2EFE7;
+    background-color: #F2EFE7;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    margin-left: 450px;
+    border-radius: 40px;
+    margin-top: 20px;
 }
 body{
     background-color: #2973B2; 

@@ -81,9 +81,10 @@ function playGame(){
         computerScore.textContent = "Opponent score: " + compScore;
 
     })
+
     //adding event listeners to the buttons
         btn1.addEventListener("click", () => {
-        computerChoice = getComputerChoice().toLowerCase();
+        let computerChoice = getComputerChoice().toLowerCase();
         playRound(computerChoice, "rock");
         yourScore.textContent = "Your score: " + userScore;
         computerScore.textContent = "Opponent score: " + compScore;
@@ -92,17 +93,16 @@ function playGame(){
         }
         );
         btn2.addEventListener("click", () => {
-            computerChoice = getComputerChoice().toLowerCase();
+            let computerChoice = getComputerChoice().toLowerCase();
             playRound(computerChoice, "paper");
             yourScore.textContent = "Your score: " + userScore;
             computerScore.textContent = "Opponent score: " + compScore;
             computerChoiceButton.textContent = "Opponent : " + computerChoice;
-
             checkIfGameOver();
         });
 
         btn3.addEventListener("click", () => {
-            computerChoice = getComputerChoice().toLowerCase();
+            let computerChoice = getComputerChoice().toLowerCase();
             playRound(computerChoice, "scissors");
             yourScore.textContent = "Your score: " + userScore;
             computerScore.textContent = "Opponent score: " + compScore;
@@ -111,6 +111,7 @@ function playGame(){
         });
         
 }
+//to start game
 playGame();
 
 

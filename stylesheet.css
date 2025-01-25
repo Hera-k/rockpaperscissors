@@ -2,11 +2,6 @@
     display: flex;
     flex-direction: column;
 }
-p{
-    font-size: 30px;
-    margin: 0;
-    margin-top: 10px;
-}
 #Name{
     text-align: center;
     align-self: center;
@@ -51,6 +46,8 @@ body{
 button{
     background-color: #9ACBD0;
     width: 250px;
+    font-size: 20px;
+    font-family: 'Courier New', 'Arial Narrow', Arial, sans-serif;
     height: 50px;
     border: 1px solid #F2EFE7;
     border-radius: 20px;

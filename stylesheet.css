@@ -25,7 +25,7 @@ body{
     background-color: #2973B2; 
 }
 #text{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500px;
     align-self: center;
     text-align: center;
@@ -44,4 +44,11 @@ button{
     height: 50px;
     border: 1px solid #F2EFE7;
     border-radius: 20px;
+}
+#computerChoice{
+    font-family:'Courier New', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    align-self: center;
+    text-align: center;
 }

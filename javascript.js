@@ -71,7 +71,8 @@ function playGame(){
         btn1.disabled = false;
         btn2.disabled = false;
         btn3.disabled = false;
-        div.textContent = "The user's score is " + userScore + " and the Computer's score is " + compScore;
+        yourScore.textContent = "Your score: " + userScore;
+        computerScore.textContent = "Opponent score: " + compScore;
 
     })
     //adding event listeners to the buttons

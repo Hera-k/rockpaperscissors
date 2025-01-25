@@ -5,15 +5,20 @@
 #Name{
     text-align: center;
     align-self: center;
-    font-size: 70px;
+    padding: 40px;
+    font-size: 80px;
     font-family:'Courier New', 'Arial Narrow', Arial, sans-serif;
     font-weight: 500px;
+    margin-bottom: 20px;
 }
 #Winner{
     border: 2px solid #F2EFE7;
     background-color: #F2EFE7;
-    width: 100px;
+    width: 300px;
     height: 50px;
+    font-family: 'Courier New', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700px;
+    font-size: 40px;
     margin-top: 20px;
     text-align: center;
     margin: auto;
@@ -56,8 +61,8 @@ button{
     display: flex;
     flex-direction: column;
     align-self: center;
-    height: 150px;
-    width: 400px;
+    height: 250px;
+    width: 600px;
     margin: auto;
     border: 1px solid #9ACBD0;
     background-color: #9ACBD0;
@@ -74,9 +79,10 @@ button{
     font-size: 20px;
     font-family: 'Courier New', 'Arial Narrow', Arial, sans-serif;
     gap: 20px;
-    text-align: left;
-    height: 50px;
-    width: 100px;
+    border: 2px solid #F2EFE7;
+    text-align: center;
+    height: 70px;
+    width: 250px;
 }
 
 #btn4{

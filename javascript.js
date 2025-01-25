@@ -35,41 +35,27 @@ function playRound(compChoice, userChoice){
 //function to play the game
 function playGame(){
     const container = document.querySelector("#container");
-    const btn1 = document.createElement("button");
-    btn1.classList.add("btn1");
-    btn1.textContent = "Rock";
-    const btn2 = document.createElement("button");
-    btn2.classList.add("btn2");
-    btn2.textContent = "Paper";
-    const btn3 = document.createElement("button");
-    btn3.classList.add("btn3");
-    btn3.textContent = "Scissors";
-    const btn4 = document.createElement("button");
-    btn4.classList.add("btn4");
-    btn4.textContent = "Reset";
-    container.appendChild(btn1);
-    container.appendChild(btn2);
-    container.appendChild(btn3);
-    container.appendChild(btn4);
+    const btn1 = document.querySelector("#btn1");
+    const btn2 = document.querySelector("#btn2");
+    const btn3 = document.querySelector("#btn3");
+    const btn4 = document.querySelector("#btn4");
     
 
     //displaying results
-    const div = document.createElement("div");
-    container.appendChild(div);
+    const yourScore = document.querySelector("#yourScore");
+    const computerScore = document.querySelector("#computerScore");
 
     //div to show who won
-    const div2 = document.createElement("div");
-    div2.classList.add("div2");
-    container.appendChild(div2);
+    const div2 = document.querySelector("#Winner");
 
     //stop the game when one reaches 5
     function checkIfGameOver(){
-        if(userScore > 5 || compScore > 5){
-        div.textContent = "Game Over";
+        if(userScore >= 5 || compScore >= 5){
+        div2.textContent = "Game Over";
         if (userScore > compScore){
-            div2.textContent = "YOU WON!!!!";
+            div2.textContent = "YOU WON!🥳";
         } else{
-            div2.textContent = "YOU LOST!!!!";
+            div2.textContent = "YOU LOST!🙁";
         }
         
         btn1.disabled = true;
@@ -92,21 +78,24 @@ function playGame(){
         btn1.addEventListener("click", () => {
         computerChoice = getComputerChoice().toLowerCase();
         playRound(computerChoice, "rock");
-        div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+        yourScore.textContent = "Your score: " + userScore;
+        computerScore.textContent = "Opponent score: " + compScore;
         checkIfGameOver();
         }
         );
         btn2.addEventListener("click", () => {
             computerChoice = getComputerChoice().toLowerCase();
             playRound(computerChoice, "paper");
-            div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+            yourScore.textContent = "Your score: " + userScore;
+            computerScore.textContent = "Opponent score: " + compScore;
             checkIfGameOver();
         });
 
         btn3.addEventListener("click", () => {
             computerChoice = getComputerChoice().toLowerCase();
             playRound(computerChoice, "scissors");
-            div.textContent = "The user's score is " + userScore + " the computer chose "+ computerChoice + " and the Computer's score is " + compScore;
+            yourScore.textContent = "Your score: " + userScore;
+            computerScore.textContent = "Opponent score: " + compScore;
             checkIfGameOver();
         });
         

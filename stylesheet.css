@@ -1,0 +1,13 @@
+#container{
+    display: flex;
+    flex-direction: column;
+}
+#Name{
+    text-align: center;
+    align-self: center;
+    font-size: 70px;
+    font-family:'Courier New', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-color: #2973B2; 
+}
